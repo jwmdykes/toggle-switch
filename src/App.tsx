@@ -127,7 +127,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
 
       <g
         id="Stars"
-        className={`filter-[url(#glow)] ${
+        className={`scale-[115%] filter-[url(#glow)] -translate-y-2 -translate-x-2 ${
           isChecked ? 'opacity-100' : 'opacity-0'
         }`}
       >
