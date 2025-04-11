@@ -138,21 +138,21 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
         />
         <use
           href="#starPath"
-          className="stroke-[0.2px] stroke-white [stroke-dasharray:0,60,0,0,0,0]"
+          className="stroke-[0.03rem] stroke-white [stroke-dasharray:0,60,0,0,0,0]"
         ></use>
         <use
           href="#starPath"
-          className="stroke-[0.3px] stroke-white [stroke-dasharray:0,100,0,0,0,0]"
-        ></use>
-
-        <use
-          href="#starPath"
-          className="stroke-[0.5px] stroke-white [stroke-dasharray:0,132,0,0,0,0]"
+          className="stroke-[0.04rem] stroke-white [stroke-dasharray:0,100,0,0,0,0]"
         ></use>
 
         <use
           href="#starPath"
-          className="stroke-[1px] stroke-white [stroke-dasharray:0,202,0,0,0,0]"
+          className="stroke-[0.06rem] stroke-white [stroke-dasharray:0,132,0,0,0,0]"
+        ></use>
+
+        <use
+          href="#starPath"
+          className="stroke-[0.08rem] stroke-white [stroke-dasharray:0,202,0,0,0,0]"
         ></use>
       </g>
       <g id="Mountains" className="translate-y-[7.2em] scale-y-[75%]">
