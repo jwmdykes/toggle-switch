@@ -10,13 +10,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
       viewBox="0 0 700 319"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      style={{
-        fillRule: 'evenodd',
-        clipRule: 'evenodd',
-        strokeLinecap: 'round',
-        strokeLinejoin: 'round',
-        strokeMiterlimit: 1.5,
-      }}
+      strokeLinecap="round"
       {...props}
     >
       <filter id="glow">
