@@ -24,8 +24,8 @@
   --color-day-mountain-4: hsl(198, 63%, 67%);
 
   --shadow-glow: 10px 10px 20px 10px rgba(0, 0, 0, 0.148);
-  --shadow-multiple: 0px 0px 0.1em 1.8em rgba(255, 255, 255, 0.06),
-    0px 0px 0.1em 3.5em rgba(255, 255, 255, 0.03),
-    0px 0px 0.1em 5.2em rgba(255, 255, 255, 0.015);
+  --shadow-multiple: 0px 0px 0.1em 1.6em rgba(255, 255, 255, 0.06),
+    0px 0px 0.1em 3.2em rgba(255, 255, 255, 0.03),
+    0px 0px 0.1em 5em rgba(255, 255, 255, 0.015);
   --shadow-groove: 0px 0px 0px 0.12em rgba(0, 0, 0, 0.1);
 }

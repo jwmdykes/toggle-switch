@@ -33,14 +33,14 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           cy="90"
           r="30"
           className={`filter-[url(#glow)] fill-sun transition-all duration-400 ${
-            isChecked ? 'translate-y-full' : 'translate-y-0.5'
+            isChecked ? 'translate-y-full' : 'translate-y-[0.3em]'
           }`}
         />
       </g>
       <g
         id="Moon"
         transform="matrix(0.840582,0,0,0.840582,-9.27571,-0.0962624)"
-        className="-translate-x-4 translate-y-1 scale-[10r%]"
+        className="-translate-x-[1em] translate-y-[1em] scale-[105%]"
       >
         <path
           d="M225.172,130.061C217.397,147.406 199.975,159.5 179.75,159.5C152.292,159.5 130,137.208 130,109.75C130,86.521 145.955,66.989 167.495,61.524C164.714,67.727 163.167,74.601 163.167,81.835C163.167,109.292 185.459,131.585 212.917,131.585C217.145,131.585 221.251,131.056 225.172,130.061Z"
@@ -59,7 +59,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
         <path
           d="M85,175C73.556,168.134 22.237,164.731 55.559,82.211C74.98,34.113 82.192,18.123 120,28.69C168.179,42.156 266.58,96.7 180,130C168.143,134.56 66.504,111.05 65,90C62.649,57.089 142.579,24.874 200,15.5C329.387,-5.622 151.759,42.004 150,50C147.737,60.286 169.059,73.713 160,95C153.508,110.254 338.391,57.235 380,5.6C381.691,3.502 480.387,57.078 220,20C65.413,-2.013 649.63,205.169 131,12.544C117.969,7.704 230.661,79.144 328.433,112.365C357.517,122.248 488.602,-64.777 425,100C386.435,199.911 282.898,80.22 250,120C243.364,128.024 195.044,124.981 160,140C158.654,140.577 117.871,201.49 125,145C151.696,134.322 222.764,-11.069 270,30C327.175,79.71 485.719,37.228 480,40C382.595,87.206 233.679,21.293 240,35.6C250.545,59.468 292.231,87.349 210,100C204.066,100.913 360.4,-50.416 270,107.033C265.851,114.26 42.18,138.102 40,153.365C38.112,166.579 105.345,147.218 108.433,147.365C15.202,151.641 70.844,210.657 40,173.215C8.153,134.555 43.955,86.322 50.934,72.365C55.759,62.714 74.123,55.525 75,45C87.826,63.069 62.539,104.641 105,125C106.034,125.496 85.399,197.023 85,180C82.366,67.708 165.59,155.294 200,150C204.259,149.345 308.146,146.25 340.308,133.615C417.006,103.483 457.624,53.188 474.5,8.82C483.22,-14.105 365.908,48.177 340,60C-34.365,230.844 357.799,2.71 320,0C443.467,106.733 436.898,9.651 395.5,20C309.219,41.57 501.56,199.659 380,135C270.866,76.951 192.635,37.888 140,40C5.212,45.408 55.065,158.819 60,144.014C70.72,111.855 427.569,142.905 400,110.121C368.906,73.144 195.219,91.83 180,90C182.745,111.166 114.589,128.593 104.608,140C89.312,157.481 67.125,98.946 55,100C39.477,101.35 13.638,150.655 13.434,150.49C10.737,148.307 19.818,108.48 25.934,102.365C108.959,19.341 181.642,10.681 170,60C159.175,105.858 346.178,75.022 390,85C390.448,86.199 331.11,97.416 331.558,98.615"
           id="starPath"
-          className="fill-none -translate-y-2 -translate-x-2"
+          className="fill-none"
         />
         <use
           href="#starPath"
@@ -80,7 +80,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           className="stroke-[1px] stroke-white [stroke-dasharray:0,202,0,0,0,0]"
         ></use>
       </g>
-      <g id="Mountains" className="translate-y-17 scale-y-[75%]">
+      <g id="Mountains" className="translate-y-[7.2em] scale-y-[75%]">
         <clipPath id="_clip1">
           <rect x="0" y="107.033" width="700" height="211.967" />
         </clipPath>
@@ -142,8 +142,8 @@ function Toggle() {
         onChange={() => setIsChecked((prev) => !prev)}
       />
       <label htmlFor={toggleId} className="cursor-pointer">
-        <div className=" text-base w-[700px] rounded-full p-[0.8em] bg-conic from-bg-bottom via-bg-top to-bg-bottom shadow-glow">
-          <div className="z-0 relative shadow-groove rounded-full overflow-hidden p-[1.2em]">
+        <div className="w-80 text-[0.6rem] rounded-full p-[0.8em] bg-conic from-bg-bottom via-bg-top to-bg-bottom shadow-glow">
+          <div className="z-0 relative shadow-groove rounded-full overflow-hidden p-[1em]">
             <ToggleBackground
               isChecked={isChecked}
               className={`-z-10 absolute top-0 left-0 bg-linear-to-b to-60% transition-colors duration-300 w-full ${
