@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg-bottom: hsl(222, 15%, 13%);
+  --color-bg-top: hsl(216, 10%, 20%);
+  --color-dark-border: hsl(218, 5%, 12%);
+  --color-night-top: hsl(242, 18%, 34%);
+  --color-night-bottom: hsl(254, 25%, 20%);
+  --color-day-bottom: hsl(345, 42%, 62%);
+  --color-day-top: hsl(358, 65%, 84%);
+
+  --shadow-glow: 10px 10px 20px 10px rgba(0, 0, 0, 0.148);
+  --shadow-multiple: 0px 0px 0.1em 1.8em rgba(255, 255, 255, 0.06),
+    0px 0px 0.1em 3.5em rgba(255, 255, 255, 0.03),
+    0px 0px 0.1em 5.2em rgba(255, 255, 255, 0.015);
+  --shadow-groove: 0px 0px 0px 0.12em rgba(0, 0, 0, 0.1);
+}
