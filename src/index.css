@@ -22,6 +22,7 @@
   --color-day-mountain-2: hsl(205, 60%, 35%);
   --color-day-mountain-3: hsl(198, 46%, 48%);
   --color-day-mountain-4: hsl(198, 63%, 67%);
+  --color-bird: rgb(0, 49, 76);
 
   --shadow-glow: 10px 10px 20px 10px rgba(0, 0, 0, 0.148);
   --shadow-multiple: 0px 0px 0.1em 1.6em rgba(255, 255, 255, 0.06),
