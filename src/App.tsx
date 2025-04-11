@@ -88,13 +88,13 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           <path
             id="_4"
             d="M-50,220C-50,220 -19.631,180.169 30,174.756C58.671,171.629 92.007,171.117 120,170C152.666,168.697 175.616,158.69 200,150C229.677,139.424 233.84,131.617 250,130C264.762,128.523 275.148,136.032 305,140C333.843,143.834 334.695,143.162 380,150C413.747,155.094 426.443,142.645 460,150C500.923,158.969 512.202,154.906 560,160C607.569,165.07 609.702,173.531 630,180C659.535,189.413 662.827,206.656 700,210C739.937,213.593 740,350 740,350L-40,370L-50,220Z"
-            className={`transition-colors duration-300 ${
+            className={`-translate-y-2 transition-colors duration-300 ${
               isChecked ? 'fill-night-mountain-4' : 'fill-day-mountain-4'
             }`}
           />
           <g
             id="_3"
-            className={`transition-colors duration-300 ${
+            className={`translate-y-2 transition-colors duration-300 ${
               isChecked ? 'fill-night-mountain-3' : 'fill-day-mountain-3'
             }`}
           >
@@ -106,7 +106,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
             </g>
           </g>
           <path
-            className={`transition-colors duration-300 ${
+            className={`-rotate-[3deg] translate-y-2 transition-colors duration-300 ${
               isChecked ? 'fill-night-mountain-2' : 'fill-day-mountain-2'
             }`}
             id="_2"
@@ -118,7 +118,10 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
               isChecked ? 'fill-night-mountain-1' : 'fill-day-mountain-1'
             }`}
           >
-            <path d="M-80,310C-80,310 -36.487,269.246 20,260C76.487,250.754 86.229,229.493 110,250C133.771,270.507 170,290 170,290C170,290 242.525,288.48 280,319C317.475,349.52 -100,360 -100,360L-80,310Z" />
+            <path
+              d="M-80,310C-80,310 -36.487,269.246 20,260C76.487,250.754 86.229,229.493 110,250C133.771,270.507 170,290 170,290C170,290 242.525,288.48 280,319C317.475,349.52 -100,360 -100,360L-80,310Z"
+              className="translate-y-6 translate-x-12"
+            />
             <path d="M700,300C706.865,298.474 697.485,290.002 678.91,287.481C669.641,286.223 660.33,278.493 650,271.839C642.613,267.081 633.946,258.272 620,261.817C608.665,264.698 596.86,262.503 590,270C580.698,280.166 568.775,282.48 560,283.695C532.125,287.553 521.827,292.515 500,300.683C471.55,311.33 441.413,305.279 420,310C398.587,314.721 370,337.321 370,337.321L710,340L700,300Z" />
           </g>
         </g>
