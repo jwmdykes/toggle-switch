@@ -33,18 +33,23 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           cy="90"
           r="30"
           className={`filter-[url(#glow)] fill-sun transition-all duration-400 ${
-            isChecked ? 'translate-y-full' : ''
+            isChecked ? 'translate-y-full' : 'translate-y-0.5'
           }`}
         />
       </g>
-      <g id="Moon" transform="matrix(0.569728,0,0,0.569728,18.8242,19.2492)">
+      <g
+        id="Moon"
+        transform="matrix(0.840582,0,0,0.840582,-9.27571,-0.0962624)"
+        className="-translate-x-4 translate-y-1 scale-[10r%]"
+      >
         <path
           d="M225.172,130.061C217.397,147.406 199.975,159.5 179.75,159.5C152.292,159.5 130,137.208 130,109.75C130,86.521 145.955,66.989 167.495,61.524C164.714,67.727 163.167,74.601 163.167,81.835C163.167,109.292 185.459,131.585 212.917,131.585C217.145,131.585 221.251,131.056 225.172,130.061Z"
           className={`filter-[url(#glow)] transition-all duration-700 ${
-            isChecked ? 'fill-moon' : 'fill-transparent'
+            isChecked ? 'fill-moon' : 'fill-transparent -translate-y-1/2'
           }`}
         />
       </g>
+
       <g
         id="Stars"
         className={`filter-[url(#glow)] ${
@@ -75,14 +80,14 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           className="stroke-[1px] stroke-white [stroke-dasharray:0,202,0,0,0,0]"
         ></use>
       </g>
-      <g id="Mountains">
+      <g id="Mountains" className="translate-y-17 scale-y-[75%]">
         <clipPath id="_clip1">
           <rect x="0" y="107.033" width="700" height="211.967" />
         </clipPath>
         <g clip-path="url(#_clip1)">
           <path
             id="_4"
-            d="M-50,220C-50,220 -19.631,180.169 30,174.756C58.671,171.629 91.609,160.617 119.602,159.5C152.268,158.197 165.616,138.69 190,130C219.677,119.424 233.712,104.166 250,107.5C302.167,118.177 279.984,115.049 310,120C338.708,124.736 344.695,143.162 390,150C423.747,155.094 446.443,142.645 480,150C520.923,158.969 512.202,154.906 560,160C607.569,165.07 609.702,173.531 630,180C659.535,189.413 662.827,206.656 700,210C739.937,213.593 740,350 740,350L-40,370L-50,220Z"
+            d="M-50,220C-50,220 -19.631,180.169 30,174.756C58.671,171.629 92.007,171.117 120,170C152.666,168.697 175.616,158.69 200,150C229.677,139.424 233.84,131.617 250,130C264.762,128.523 275.148,136.032 305,140C333.843,143.834 334.695,143.162 380,150C413.747,155.094 426.443,142.645 460,150C500.923,158.969 512.202,154.906 560,160C607.569,165.07 609.702,173.531 630,180C659.535,189.413 662.827,206.656 700,210C739.937,213.593 740,350 740,350L-40,370L-50,220Z"
             className={`transition-colors duration-300 ${
               isChecked ? 'fill-night-mountain-4' : 'fill-day-mountain-4'
             }`}
@@ -141,7 +146,7 @@ function Toggle() {
           <div className="z-0 relative shadow-groove rounded-full overflow-hidden p-[1.2em]">
             <ToggleBackground
               isChecked={isChecked}
-              className={`-z-10 absolute top-0 left-0 bg-linear-to-l transition-colors duration-300 w-full ${
+              className={`-z-10 absolute top-0 left-0 bg-linear-to-b to-60% transition-colors duration-300 w-full ${
                 isChecked
                   ? 'from-night-top to-night-bottom'
                   : 'from-day-top to-day-bottom'

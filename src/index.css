@@ -6,21 +6,22 @@
   --color-dark-border: hsl(218, 5%, 12%);
 
   /* base background colors */
-  --color-night-top: hsl(242, 18%, 34%);
-  --color-night-bottom: hsl(255, 34%, 21%);
-  --color-day-bottom: hsl(29, 100%, 75%);
-  --color-day-top: hsl(17, 89%, 76%);
+  --color-night-top: hsl(228, 52%, 37%);
+  --color-night-bottom: hsl(255, 48%, 68%);
 
-  --color-moon: hsl(46, 100%, 97%);
-  --color-sun: hsl(60, 22%, 90%);
-  --color-night-mountain-1: hsl(240, 20%, 17%);
-  --color-night-mountain-2: hsl(244, 18%, 20%);
-  --color-night-mountain-3: hsl(245, 17%, 25%);
-  --color-night-mountain-4: hsl(243, 15%, 29%);
-  --color-day-mountain-1: hsl(345, 49%, 44%);
-  --color-day-mountain-2: hsl(4, 73%, 63%);
-  --color-day-mountain-3: hsl(14, 100%, 67%);
-  --color-day-mountain-4: hsl(28, 93%, 62%);
+  --color-day-bottom: hsl(208, 100%, 97%);
+  --color-day-top: hsl(200, 100%, 82%);
+
+  --color-moon: hsl(244, 100%, 97%);
+  --color-sun: hsl(56, 89%, 86%);
+  --color-night-mountain-1: hsl(236, 38%, 29%);
+  --color-night-mountain-2: hsl(236, 40%, 39%);
+  --color-night-mountain-3: hsl(227, 39%, 49%);
+  --color-night-mountain-4: hsl(230, 41%, 59%);
+  --color-day-mountain-1: hsl(205, 65%, 28%);
+  --color-day-mountain-2: hsl(205, 60%, 35%);
+  --color-day-mountain-3: hsl(198, 46%, 48%);
+  --color-day-mountain-4: hsl(198, 63%, 67%);
 
   --shadow-glow: 10px 10px 20px 10px rgba(0, 0, 0, 0.148);
   --shadow-multiple: 0px 0px 0.1em 1.8em rgba(255, 255, 255, 0.06),
