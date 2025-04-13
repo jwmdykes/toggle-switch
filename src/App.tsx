@@ -13,6 +13,14 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
       strokeLinecap="round"
       {...props}
     >
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+        <feMerge>
+          <feMergeNode in="coloredBlur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+
       <defs>
         <path
           id="cloudPath"
@@ -30,45 +38,55 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
         />
       </defs>
 
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-        <feMerge>
-          <feMergeNode in="coloredBlur" />
-          <feMergeNode in="SourceGraphic" />
-        </feMerge>
-      </filter>
+      <circle
+        id="sun"
+        cx="540"
+        cy="160"
+        r="90"
+        className={`filter-[url(#glow)] fill-sun transition-all duration-400 ${
+          isChecked ? 'translate-y-full' : ''
+        }`}
+      />
 
-      <g id="Sun" transform="matrix(3.12982,0,0,3.12982,-1295.3,-111.684)">
-        <circle
-          cx="580"
-          cy="90"
-          r="30"
-          className={`filter-[url(#glow)] fill-sun transition-all duration-400 ${
-            isChecked ? 'translate-y-full' : 'translate-y-[0.3em]'
-          }`}
-        />
-      </g>
+      <path
+        id="Moon"
+        transform="matrix(0.84,0,0,0.91,-15,0)"
+        d="M225.172,130.061C217.397,147.406 199.975,159.5 179.75,159.5C152.292,159.5 130,137.208 130,109.75C130,86.521 145.955,66.989 167.495,61.524C164.714,67.727 163.167,74.601 163.167,81.835C163.167,109.292 185.459,131.585 212.917,131.585C217.145,131.585 221.251,131.056 225.172,130.061Z"
+        className={`scale-[105%] filter-[url(#glow)] transition-all duration-700 ${
+          isChecked ? 'fill-moon' : 'fill-transparent -translate-y-1/2'
+        }`}
+      />
+
       <g
-        id="Clouds"
+        id="clouds"
         className={`${
           isChecked ? 'opacity-0' : 'opacity-100'
-        } transition-opacity duration-200 -translate-y-4`}
+        } transition-opacity duration-200`}
       >
-        <g transform="matrix(0.652609,0,0,0.706964,261.03,23.6285)">
-          <use href="#cloudPath" className="fill-[rgb(215,241,255)]"></use>
-        </g>
-        <g transform="matrix(0.901489,0,0,0.799636,25.3886,18.2931)">
-          <use href="#cloudPath" className="fill-[rgb(242,250,255)]"></use>
-        </g>
-        <g transform="matrix(0.80833,0,0,0.824965,256.251,26.615)">
-          <use href="#cloudPath" className="fill-[rgb(235,248,255)]"></use>
-        </g>
-        <g transform="matrix(1.16518,0,0,1.05272,7.34375,17.0625)">
-          <use href="#cloudPath" className="fill-white"></use>
-        </g>
+        <use
+          transform="matrix(0.65,0,0,0.70,268,8)"
+          href="#cloudPath"
+          className="fill-[rgb(215,241,255)]"
+        ></use>
+        <use
+          transform="matrix(0.90,0,0,0.8,37.38,3)"
+          href="#cloudPath"
+          className="fill-[rgb(242,250,255)]"
+        ></use>
+        <use
+          transform="matrix(0.80,0,0,0.82,268.25,10)"
+          href="#cloudPath"
+          className="fill-[rgb(235,248,255)] "
+        ></use>
+        <use
+          transform="matrix(1.16,0,0,1.05,16,1)"
+          href="#cloudPath"
+          className="fill-white"
+        ></use>
       </g>
+
       <g
-        id="Birds"
+        id="birds"
         transform="matrix(0.811411,0,0,0.811411,82.8801,38.4731)"
         className={`-translate-x-10 -translate-y-1 scale-[110%] ${
           isChecked ? 'opacity-0' : 'opacity-100'
@@ -99,18 +117,6 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           </g>
         </g>
       </g>
-      <g
-        id="Moon"
-        transform="matrix(0.840582,0,0,0.840582,-9.27571,-0.0962624)"
-        className="-translate-x-[1em] translate-y-[1em] scale-[105%]"
-      >
-        <path
-          d="M225.172,130.061C217.397,147.406 199.975,159.5 179.75,159.5C152.292,159.5 130,137.208 130,109.75C130,86.521 145.955,66.989 167.495,61.524C164.714,67.727 163.167,74.601 163.167,81.835C163.167,109.292 185.459,131.585 212.917,131.585C217.145,131.585 221.251,131.056 225.172,130.061Z"
-          className={`filter-[url(#glow)] transition-all duration-700 ${
-            isChecked ? 'fill-moon' : 'fill-transparent -translate-y-1/2'
-          }`}
-        />
-      </g>
 
       <g
         id="Stars"
@@ -135,6 +141,7 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
           className="stroke-[0.08rem] stroke-white [stroke-dasharray:0,202,0,0,0,0]"
         ></use>
       </g>
+
       <g id="Mountains" className="translate-y-[7.2em] scale-y-[75%]">
         <path
           d="M-50,220C-50,220 -19.631,180.169 30,174.756C58.671,171.629 92.007,171.117 120,170C152.666,168.697 175.616,158.69 200,150C229.677,139.424 233.84,131.617 250,130C264.762,128.523 275.148,136.032 305,140C333.843,143.834 334.695,143.162 380,150C413.747,155.094 426.443,142.645 460,150C500.923,158.969 512.202,154.906 560,160C607.569,165.07 609.702,173.531 630,180C659.535,189.413 662.827,206.656 700,210C739.937,213.593 740,350 740,350L-40,370L-50,220Z"
@@ -174,9 +181,8 @@ function ToggleBackground({ isChecked, ...props }: BackgroundProps) {
   );
 }
 
-function Toggle() {
+function Toggle(props: ComponentPropsWithRef<'input'>) {
   const toggleId = useId();
-  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <>
@@ -185,23 +191,22 @@ function Toggle() {
         id={toggleId}
         className="sr-only"
         aria-label="Toggle"
-        checked={isChecked}
-        onChange={() => setIsChecked((prev) => !prev)}
+        {...props}
       />
       <label htmlFor={toggleId} className="cursor-pointer">
         <div className="w-80 text-[0.6rem] rounded-full p-[0.8em] bg-gradient-to-br from-bg-bottom to-bg-top shadow-glow">
           <div className="z-0 relative shadow-groove rounded-full overflow-hidden p-[1em]">
             <ToggleBackground
-              isChecked={isChecked}
+              isChecked={props.checked ?? false}
               className={`-z-10 absolute top-0 left-0 bg-linear-to-b to-60% transition-colors duration-300 w-full ${
-                isChecked
+                props.checked
                   ? 'from-night-top to-night-bottom'
                   : 'from-day-top to-day-bottom'
               }`}
             />
             <div
               className={`shadow-multiple z-10 border-[0.12em] border-dark-border bg-linear-to-r from-bg-top to-bg-bottom rounded-full w-2/5 aspect-square  ${
-                isChecked && 'translate-x-[150%]'
+                props.checked && 'translate-x-[150%]'
               } transition-all duration-300 ease-in-out`}
             ></div>
           </div>
@@ -212,9 +217,15 @@ function Toggle() {
 }
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
   return (
-    <div className="bg-linear-to-b from-bg-top to-bg-bottom h-dvh flex items-center justify-center">
-      <Toggle />
+    <div
+      className={`transition-colors duration-700 bg-linear-to-br h-dvh flex items-center justify-center ${
+        isDark ? 'from-bg-top to-bg-bottom' : 'from-blue-50 to-blue-200'
+      }`}
+    >
+      <Toggle checked={isDark} onChange={() => setIsDark((prev) => !prev)} />
     </div>
   );
 }
